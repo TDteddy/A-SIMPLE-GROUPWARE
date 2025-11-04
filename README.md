@@ -40,11 +40,18 @@ BRYZE 사내 게시판 및 그룹웨어 시스템입니다. Google Workspace 계
 3. "API 및 서비스" > "사용자 인증 정보" 이동
 4. "사용자 인증 정보 만들기" > "OAuth 클라이언트 ID" 선택
 5. 애플리케이션 유형: "웹 애플리케이션"
-6. 승인된 자바스크립트 원본:
-   - `http://localhost:3000`
-7. 승인된 리디렉션 URI:
-   - `http://localhost:3000/auth/callback`
+6. **승인된 자바스크립트 원본** (실행 환경에 따라 추가):
+   - 로컬 개발: `http://localhost:3000`
+   - 개발/스테이징: `https://dev.bryze.kr` (예시)
+   - 프로덕션: `https://groupware.bryze.kr` (예시)
+7. **승인된 리디렉션 URI** (실행 환경에 따라 추가):
+   - 로컬 개발: `http://localhost:3000/auth/callback`
+   - 개발/스테이징: `https://dev.bryze.kr/auth/callback` (예시)
+   - 프로덕션: `https://groupware.bryze.kr/auth/callback` (예시)
 8. 생성된 클라이언트 ID와 클라이언트 보안 비밀번호 복사
+
+> **참고**: Google OAuth는 여러 개의 승인된 원본과 리디렉션 URI를 동시에 등록할 수 있습니다.
+> 환경별로 별도의 OAuth 클라이언트를 만들거나, 하나의 클라이언트에 모든 환경의 URL을 등록할 수 있습니다.
 
 ### 설치 및 실행
 
@@ -59,12 +66,14 @@ cd A-SIMPLE-GROUPWARE
 cp .env.example .env
 ```
 
-`.env` 파일을 열어 다음 값을 설정하세요:
+`.env` 파일을 열어 다음 값을 설정하세요 (로컬 개발 환경 기준):
 ```env
 GOOGLE_CLIENT_ID=your-google-client-id.apps.googleusercontent.com
 GOOGLE_CLIENT_SECRET=your-google-client-secret
 SECRET_KEY=your-secret-key-change-in-production
 ALLOWED_DOMAIN=bryze.kr
+FRONTEND_URL=http://localhost:3000
+GOOGLE_REDIRECT_URI=http://localhost:3000/auth/callback
 ```
 
 3. **프론트엔드 환경 변수 설정**
@@ -72,11 +81,14 @@ ALLOWED_DOMAIN=bryze.kr
 cp frontend/.env.example frontend/.env
 ```
 
-`frontend/.env` 파일을 열어 다음 값을 설정하세요:
+`frontend/.env` 파일을 열어 다음 값을 설정하세요 (로컬 개발 환경 기준):
 ```env
 VITE_GOOGLE_CLIENT_ID=your-google-client-id.apps.googleusercontent.com
 VITE_API_URL=http://localhost:8000
 ```
+
+> **프로덕션 환경**: 실제 배포 시에는 위 URL들을 실제 도메인으로 변경해야 합니다.
+> 예: `FRONTEND_URL=https://groupware.bryze.kr`, `VITE_API_URL=https://api.bryze.kr`
 
 4. **Docker Compose로 실행**
 ```bash
@@ -215,11 +227,33 @@ python -c "import secrets; print(secrets.token_urlsafe(32))"
 프로덕션 환경에서는 다음 사항을 확인하세요:
 
 1. **환경 변수**: 모든 비밀 값을 안전하게 관리
-2. **HTTPS**: SSL/TLS 인증서 적용
-3. **데이터베이스**: 안전한 비밀번호 및 백업 설정
-4. **CORS**: 프론트엔드 도메인만 허용
-5. **로깅**: 적절한 로깅 레벨 설정
-6. **모니터링**: 서버 및 애플리케이션 모니터링 구성
+   - `SECRET_KEY`: 강력한 랜덤 키 생성
+   - `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`: 프로덕션용 OAuth 클라이언트 사용
+
+2. **URL 설정**: 실제 도메인으로 변경
+   - Backend `.env`:
+     ```env
+     FRONTEND_URL=https://groupware.bryze.kr
+     GOOGLE_REDIRECT_URI=https://groupware.bryze.kr/auth/callback
+     ```
+   - Frontend `.env`:
+     ```env
+     VITE_API_URL=https://api.bryze.kr
+     VITE_GOOGLE_CLIENT_ID=your-production-client-id
+     ```
+   - Google Cloud Console에서 프로덕션 URL을 승인된 원본 및 리디렉션 URI로 등록
+
+3. **HTTPS**: SSL/TLS 인증서 적용
+   - Let's Encrypt 또는 유료 인증서 사용
+   - Nginx/Apache 리버스 프록시 설정
+
+4. **데이터베이스**: 안전한 비밀번호 및 백업 설정
+
+5. **CORS**: 프론트엔드 도메인만 허용
+
+6. **로깅**: 적절한 로깅 레벨 설정
+
+7. **모니터링**: 서버 및 애플리케이션 모니터링 구성
 
 ## 라이선스
 
