@@ -42,6 +42,23 @@
   font-weight: 500;
 }
 
+.admin-button {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.admin-button:hover {
+  background: #fa5252;
+}
+
 .logout-button {
   background: #667eea;
   color: white;

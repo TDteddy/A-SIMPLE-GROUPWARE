@@ -8,6 +8,10 @@ BRYZE 사내 게시판 및 그룹웨어 시스템입니다. Google Workspace 계
 - **사내 게시판**: 공지사항, 일반 게시글 작성/수정/삭제
 - **게시글 관리**: 공지사항 설정, 상단 고정, 조회수 관리
 - **권한 관리**: 일반 사용자 및 관리자 권한 구분
+- **관리자 페이지**:
+  - 대시보드 (통계 및 현황)
+  - 사용자 관리 (권한 부여, 계정 활성화/비활성화)
+  - 게시글 관리 (전체 게시글 조회 및 삭제)
 - **반응형 디자인**: 데스크톱 및 모바일 환경 지원
 
 ## 기술 스택
@@ -202,6 +206,13 @@ A-SIMPLE-GROUPWARE/
 - `POST /api/posts/` - 게시글 작성
 - `PUT /api/posts/{post_id}` - 게시글 수정
 - `DELETE /api/posts/{post_id}` - 게시글 삭제
+
+### 관리자 (Admin only)
+- `GET /api/admin/stats` - 대시보드 통계
+- `GET /api/admin/users` - 모든 사용자 목록
+- `PATCH /api/admin/users/{user_id}` - 사용자 권한/상태 변경
+- `GET /api/admin/posts` - 모든 게시글 목록
+- `DELETE /api/admin/posts/{post_id}` - 게시글 삭제
 
 ## 보안 설정
 

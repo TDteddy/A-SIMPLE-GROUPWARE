@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from .core.config import settings
 from .core.database import engine, Base
-from .api import auth, users, posts
+from .api import auth, users, posts, admin
 
 # 데이터베이스 테이블 생성
 Base.metadata.create_all(bind=engine)
@@ -27,6 +27,7 @@ app.add_middleware(
 app.include_router(auth.router, prefix="/api/auth", tags=["Authentication"])
 app.include_router(users.router, prefix="/api/users", tags=["Users"])
 app.include_router(posts.router, prefix="/api/posts", tags=["Posts"])
+app.include_router(admin.router, prefix="/api/admin", tags=["Admin"])
 
 
 @app.get("/")

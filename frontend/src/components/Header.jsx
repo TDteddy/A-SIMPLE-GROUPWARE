@@ -1,5 +1,5 @@
 import { useAuth } from '../context/AuthContext'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import './Header.css'
 
 function Header() {
@@ -28,6 +28,11 @@ function Header() {
                 />
               )}
               <span className="user-name">{user.name}</span>
+              {user.is_admin && (
+                <Link to="/admin" className="admin-button">
+                  관리자
+                </Link>
+              )}
               <button onClick={handleLogout} className="logout-button">
                 로그아웃
               </button>
