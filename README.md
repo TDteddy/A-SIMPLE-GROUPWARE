@@ -64,7 +64,7 @@ cp .env.example .env
 GOOGLE_CLIENT_ID=your-google-client-id.apps.googleusercontent.com
 GOOGLE_CLIENT_SECRET=your-google-client-secret
 SECRET_KEY=your-secret-key-change-in-production
-ALLOWED_DOMAIN=bryze.com
+ALLOWED_DOMAIN=bryze.kr
 ```
 
 3. **프론트엔드 환경 변수 설정**
@@ -197,10 +197,10 @@ A-SIMPLE-GROUPWARE/
 `.env` 파일의 `ALLOWED_DOMAIN`을 설정하여 특정 도메인의 Google 계정만 로그인할 수 있도록 제한합니다.
 
 ```env
-ALLOWED_DOMAIN=bryze.com
+ALLOWED_DOMAIN=bryze.kr
 ```
 
-이 설정으로 `@bryze.com` 이메일만 로그인이 허용됩니다.
+이 설정으로 `@bryze.kr` 이메일만 로그인이 허용됩니다.
 
 ### JWT Secret Key
 프로덕션 환경에서는 반드시 강력한 비밀 키를 생성하여 사용하세요:

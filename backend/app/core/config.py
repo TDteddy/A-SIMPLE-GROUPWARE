@@ -20,7 +20,7 @@ class Settings(BaseSettings):
     FRONTEND_URL: str = "http://localhost:3000"
 
     # Company Domain
-    ALLOWED_DOMAIN: str = "bryze.com"
+    ALLOWED_DOMAIN: str = "bryze.kr"
 
     class Config:
         env_file = ".env"
