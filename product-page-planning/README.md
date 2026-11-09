@@ -3,7 +3,8 @@
 | 폴더 | 내용 |
 |---|---|
 | `01_guide/상세페이지_기획_가이드.md` | 기획안 작성 가이드 v2.5: Part A 대시보드 기획안 가이드라인(공통 작성법 7단계·13영역·공통 기준 13항목·검수 12문항), Part B 검증된 보조 방법론, Part C 검증 기록 |
-| `03_plan/N001_상세페이지_기획안.md` | N001 기획안 v3.2 — 분석·근거·변경 이력 전체본 |
+| `03_plan/N001_상세페이지_기획안.md` | N001 상세페이지 기획안 v3.3 (대시보드 01~13 영역 구조) |
+| `03_plan/N001_영역별_카피_후보_검토.md` | 영역별 카피 후보 생성 → 맹점 검토 → 선택 기록 (02 KV 포함 전 영역) |
 | `01_guide/oss-skills/` | 벤더링한 오픈소스 카피 스킬 4종(MIT): marketingskills copywriting·copy-editing, made-to-stick, ecommerce-visual-copywriting |
 | `03_plan/copy-run/` | copy-masters 실행 기록: 브리프 → 팀 A·B·C 132줄 → CD 1차 → 재작업·변론 → CD 2차 후보 30 → 광고주 검수·선택 |
 | `03_plan/N001_카피_오픈소스스킬_감사.md` | 스킬 5종으로 v3.4 카피 감사 → v3.5 수정 근거 |
