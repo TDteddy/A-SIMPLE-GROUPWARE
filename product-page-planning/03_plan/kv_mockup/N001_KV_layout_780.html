@@ -1,0 +1,35 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<style>
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#fff;font-family:Pretendard,-apple-system,sans-serif}
+.kv{position:relative;width:780px;height:1040px;background:#2B2F33;overflow:hidden;color:#F3F4F2}
+.kv .photo{position:absolute;left:0;top:330px;width:780px;height:740px;
+  background:
+   radial-gradient(ellipse 60% 40% at 50% 85%, rgba(0,0,0,.45), transparent 70%),
+   linear-gradient(180deg,#34393E 0%,#2B2F33 45%,#23262A 100%)}
+/* placeholder product silhouette: base, arm, head, phone */
+.base{position:absolute;left:470px;top:905px;width:150px;height:28px;border-radius:50%;background:#15171A;transform:translateX(-50%)}
+.dial{position:absolute;left:470px;top:880px;width:120px;height:34px;border-radius:50%;background:#9A9EA3;transform:translateX(-50%)}
+.arm{position:absolute;left:463px;top:760px;width:16px;height:130px;background:#1A1C1F;border-radius:8px}
+.head{position:absolute;left:470px;top:650px;width:132px;height:132px;border-radius:50%;background:#1A1C1F;transform:translateX(-50%)}
+.phone{position:absolute;left:470px;top:430px;width:270px;height:560px;border-radius:38px;background:#111316;border:3px solid #3A3E43;transform:translateX(-50%) rotate(-7deg);transform-origin:50% 70%}
+.phone:after{content:'';position:absolute;inset:14px;border-radius:26px;background:#0B0C0E}
+.note{position:absolute;left:64px;bottom:40px;font-size:13px;color:#8E939A;letter-spacing:.02em}
+.title{position:absolute;left:64px;top:96px;font-weight:700;font-size:64px;line-height:1.22;letter-spacing:-0.02em;color:#F3F4F2}
+.title em{font-style:normal;color:#F3F4F2}
+.label{position:absolute;left:64px;top:262px;display:inline-flex;align-items:center;gap:12px;font-size:30px;font-weight:500;color:#C9CDD1;letter-spacing:-0.01em}
+.label i{display:inline-block;width:34px;height:2px;background:#8E939A}
+.safe{position:absolute;inset:0;pointer-events:none}
+.grid{position:absolute;left:0;right:0;border-top:1px dashed rgba(255,120,120,.35)}
+.grid span{position:absolute;right:6px;top:-18px;font-size:12px;color:rgba(255,160,160,.8)}
+</style></head><body>
+<div class="kv" id="kv">
+  <div class="photo"></div>
+  <div class="base"></div><div class="dial"></div><div class="arm"></div><div class="head"></div><div class="phone"></div>
+  <div class="note">[사진 자리표시 — 실사 촬영본으로 교체]</div>
+  <h1 class="title">다이얼로 고정하고,<br>자석으로 붙입니다.</h1>
+  <div class="label"><i></i>충전 기능 없음 · 거치 전용</div>
+  <div class="safe" id="safe"></div>
+</div>
+</body></html>
