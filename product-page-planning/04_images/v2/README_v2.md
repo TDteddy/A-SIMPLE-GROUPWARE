@@ -30,5 +30,8 @@
 - 09-5 해제 컷: 다이얼이 OPEN 위치인지 각인 판독 어려움.
 - 11 스크린 1이 1300px를 약 15px 초과(5문항). 답 길이 조정 또는 4+1 분할 가능.
 
+## 전체 합본
+- `N001_상세페이지_전체_v2_780.jpg`(780px, 01→12 전 영역) · `_1of2.jpg`(01~07, 1560px) · `_2of2.jpg`(08~12, 1560px). 2배판은 JPG 높이 한계로 2분할.
+
 ## 재현
 `scratchpad/gen2/compose/*.html` + `base.css` + `render.js`(Playwright 780px ×2, fullPage).
