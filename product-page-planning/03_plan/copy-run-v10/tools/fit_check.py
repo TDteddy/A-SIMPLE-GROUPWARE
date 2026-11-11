@@ -9,7 +9,7 @@ import json, os, re, subprocess, sys, tempfile
 
 RUN, CODE = sys.argv[1], sys.argv[2]
 SP = "/tmp/claude-0/-home-user-A-SIMPLE-GROUPWARE/cb02de4c-2427-5da5-97fd-829e8871780e/scratchpad"
-NAMES = {"W1": "선명", "W2": "강렬", "W3": "담백"}
+NAMES = {"W1": "선명", "W2": "강렬", "W3": "담백", "P": "상업용"}
 
 # 써야 하는 칸
 SLOTS = {
