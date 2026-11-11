@@ -46,7 +46,7 @@ def parse(path):
             continue
         m = re.match(r"^\s*T(\d+)\s*:\s?(.*)$", line)
         if sec and m:
-            pages[sec][int(m.group(1))] = m.group(2).strip()
+            pages[sec][int(m.group(1))] = m.group(2).strip().replace("\\n", "\n")
     return pages
 
 
