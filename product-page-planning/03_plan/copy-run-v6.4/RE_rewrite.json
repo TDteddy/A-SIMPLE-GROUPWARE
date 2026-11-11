@@ -1,0 +1,8 @@
+{
+  "MS": {"pick": 3, "alt": 4},
+  "RC3": {"pick": 1, "alt": 3},
+  "S2": {"pick": 4, "alt": 5, "replace": true},
+  "S2X": {"pick": 2, "alt": 3},
+  "S3": {"pick": 4, "alt": 1, "replace": false},
+  "DP3": {"pick": 3, "alt": 5}
+}
